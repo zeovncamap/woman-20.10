@@ -1,0 +1,105 @@
+/* Định dạng chung */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f3f4ed;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* Định dạng tiêu đề */
+h1 {
+    color: #d34c69;
+    font-size: 24px;
+}
+
+p {
+    color: #333;
+    font-size: 18px;
+}
+
+/* Khóm hoa */
+.garden {
+    display: flex;
+    gap: 20px;
+}
+
+/* Hoa */
+.flower {
+    position: relative;
+    width: 100px;
+    height: 150px;
+    animation: sway 3s ease-in-out infinite;
+}
+
+/* Cánh hoa */
+.petal {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #8ecae6;
+    border-radius: 50%;
+    animation: bloom 2s ease-in-out infinite alternate;
+}
+
+.petal1 { top: 20px; left: 30px; }
+.petal2 { top: 40px; left: 10px; }
+.petal3 { top: 40px; right: 10px; }
+.petal4 { top: 60px; left: 30px; }
+
+/* Tâm hoa */
+.center {
+    width: 30px;
+    height: 30px;
+    background-color: #219ebc;
+    border-radius: 50%;
+    position: absolute;
+    top: 45px;
+    left: 35px;
+}
+
+/* Cành hoa */
+.stem {
+    width: 5px;
+    height: 70px;
+    background-color: #4caf50;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Lá */
+.leaf {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    background-color: #81c784;
+    border-radius: 50%;
+    animation: leaf-move 3s ease-in-out infinite alternate;
+}
+
+.leaf-left { bottom: 40px; left: -15px; transform: rotate(-45deg); }
+.leaf-right { bottom: 40px; right: -15px; transform: rotate(45deg); }
+
+/* Hiệu ứng nở nhẹ cho cánh hoa */
+@keyframes bloom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+/* Hiệu ứng đung đưa cho cả khóm hoa */
+@keyframes sway {
+    0%, 100% { transform: rotate(0); }
+    50% { transform: rotate(3deg); }
+}
+
+/* Hiệu ứng chuyển động cho lá */
+@keyframes leaf-move {
+    0% { transform: rotate(45deg) scale(1); }
+    100% { transform: rotate(50deg) scale(1.1); }
+}
